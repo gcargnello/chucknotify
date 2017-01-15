@@ -5,8 +5,8 @@ from flask import Flask, request, jsonify, abort
 
 app = Flask(__name__)
 
-@app.route('/slash-command-url', methods=['POST'])
-#@app.route('/')
+#@app.route('/slash-command-url', methods=['POST'])
+@app.route('/')
 
 # The parameters included in a slash command request (with example values):
 #   token=gIkuvaNzQIHg97ATvDxqgjtO
@@ -70,5 +70,6 @@ def witz_to_slack():
                }
 
 #   restituisce il messaggio di ritorno
-    return payload
+    return('messaggio di ritorno')
+#    return payload
     print (payload)
