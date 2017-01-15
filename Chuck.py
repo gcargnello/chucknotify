@@ -5,9 +5,6 @@ from flask import Flask, request, jsonify, abort
 
 app = Flask(__name__)
 
-@app.route('/', methods=['POST'])
-#@app.route('/')
-
 # The parameters included in a slash command request (with example values):
 #   token=gIkuvaNzQIHg97ATvDxqgjtO
 #   team_id=T0001
@@ -24,6 +21,7 @@ app = Flask(__name__)
 # IMPLEMENTAZIONE /COMMAND (slash command) slack
 # LEGGE UN WITZ CHUCK NORRIS E LO MANDA A SLACK
 ##################################################
+@app.route('/', methods=['POST'])
 def witz_to_slack():
 
     # Prima di tutto alcune validazioni...
@@ -78,3 +76,5 @@ def witz_to_slack():
 #    return text_a
     return jsonify(payload)
 
+if __name__ ==  "__main__":
+    app.run()

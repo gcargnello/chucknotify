@@ -84,3 +84,6 @@ def witz_to_slack():
         print (r.text)
 
     return '<h1>Inviato messaggio</h1>'
+
+if __name__ ==  "__main__":
+    app.run()
