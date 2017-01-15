@@ -68,6 +68,6 @@ def witz_to_slack():
                               ]
                }
 
-
+#   restituisce il messaggio di ritorno
     return payload
     print (payload)
