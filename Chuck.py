@@ -27,6 +27,13 @@ app = Flask(__name__)
 ##################################################
 def witz_to_slack():
 
+    # Prima di tutto alcune validazioni...
+    token = request.form.get('token',None)
+    if token!='0l7PSt00EvrqXUYkMVBspUAD':
+        abort(400)
+
+    command = request.form.get('command',None)
+
     # PROCEDURA MAIN recupera un witz a caso
     url = 'http://api.icndb.com/jokes/random'
 
@@ -56,7 +63,7 @@ def witz_to_slack():
 
     payload = {'user' : usr,
                'icon_emoji': icon,
-               'text':      msg,
+               'text':      command,
                'attachments': [
                                 {   "color": "#36a64f",
                                     'text': text_a,
