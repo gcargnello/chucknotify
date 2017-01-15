@@ -55,7 +55,7 @@ def witz_to_slack():
 
     # e adesso inviala a slack via slash command
     usr = request.form.get('user_name',None)
-    hello = 'ciao ',usr,' la sai l\'ultima?'
+    hello = 'ciao ' + usr + ', la sai l\'ultima?'
     icon = ":hugging_face:"
     msg = "La sai l'ultima?"
     text_a = witz
