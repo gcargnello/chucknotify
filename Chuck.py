@@ -23,6 +23,7 @@ app = Flask(__name__)
 
 
 ##################################################
+# IMPLEMENTAZIONE /COMMAND (slash command) slack
 # LEGGE UN WITZ CHUCK NORRIS E LO MANDA A SLACK
 ##################################################
 def witz_to_slack():
@@ -53,7 +54,8 @@ def witz_to_slack():
 
 
     # e adesso inviala a slack via slash command
-    usr = "WitzBOT"
+    usr = request.form.get('user_name',None)
+    hello = 'ciao ',usr,' la sai l\'ultima?'
     icon = ":hugging_face:"
     msg = "La sai l'ultima?"
     text_a = witz
@@ -61,9 +63,8 @@ def witz_to_slack():
     channel = "vacanze"
 
 
-    payload = {'user' : usr,
-               'icon_emoji': icon,
-               'text':      command,
+    payload = {
+               'text':  hello,
                'attachments': [
                                 {   "color": "#36a64f",
                                     'text': text_a,
