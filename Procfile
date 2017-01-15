@@ -1,1 +1,1 @@
-web gunicorn Chuck_webhook:app
+web gunicorn Chuck:app
