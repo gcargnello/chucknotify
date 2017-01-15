@@ -44,9 +44,7 @@ def witz_to_slack():
     print ('W:',witz)
 
 
-    # e adesso inviala a slack
-    url_wh = 'https://hooks.slack.com/services/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'
-
+    # e adesso inviala a slack via slash command
     usr = "WitzBOT"
     icon = ":hugging_face:"
     msg = "La sai l'ultima?"
@@ -58,7 +56,7 @@ def witz_to_slack():
     payload = {'user' : usr,
                'icon_emoji': icon,
                'text':      msg,
-               'channel':   channel,
+ #              'channel':   channel,
                'attachments': [
                                 {   "color": "#36a64f",
                                     'text': text_a,
@@ -71,16 +69,5 @@ def witz_to_slack():
                }
 
 
-    # esegue chiamata
-    r = requests.put(url_wh,data = json.dumps(payload),
-                     headers={'Content-Type': 'application/json'}
-                    )
-
-    # controlla esito
-    if (r.status_code != 200):
-        print ('Errore di connessione')
-        print (r.text)
-    else:   
-        print (r.text)
-
-    return '<h1>Inviato messaggio</h1>'
+    return payload
+    print (payload)
