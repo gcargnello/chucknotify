@@ -33,9 +33,7 @@ def witz_to_slack():
 
     # PROCEDURA MAIN recupera un witz a caso
     url = 'http://api.icndb.com/jokes/random'
-
     r = requests.get(url)
-
     if r.status_code != 200:
         pass
         witz = 'Non ne ho una da raccontare...'
@@ -44,7 +42,7 @@ def witz_to_slack():
         full = json.loads(full_json)
         witz = (full['value']['joke'])
 
-    # togli i cartteri escape
+    # togli i caratteri escape
     witz = html_decode(witz)
     print ('W:',witz)
 
