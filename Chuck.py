@@ -57,20 +57,18 @@ def witz_to_slack():
     payload = {'user' : usr,
                'icon_emoji': icon,
                'text':      msg,
- #              'channel':   channel,
                'attachments': [
                                 {   "color": "#36a64f",
                                     'text': text_a,
                                     'pretext': text_b,
                                     'author_name': "Chuck Norris",
                                     'author_link': "http://www.icndb.com/"
-    #                                'author_icon': "http://flickr.com/icons/bobby.jpg"
                                 }
                               ]
                }
 
 #   restituisce il messaggio di ritorno
 #    return('messaggio di ritorno')
-    return text_a
-#    return payload
+#    return text_a
+    return payload
     print (payload)
