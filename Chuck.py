@@ -70,6 +70,7 @@ def witz_to_slack():
                }
 
 #   restituisce il messaggio di ritorno
-    return('messaggio di ritorno')
+#    return('messaggio di ritorno')
+    return text_a
 #    return payload
     print (payload)
