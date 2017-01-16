@@ -19,8 +19,6 @@ app = Flask(__name__)
 #   text=94070
 #   response_url=https://hooks.slack.com/commands/1234/5678
 
-
-
 ##################################################
 # LEGGE UN WITZ CHUCK NORRIS E LO MANDA A SLACK
 ##################################################
